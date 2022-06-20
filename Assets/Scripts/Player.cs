@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
     public void Heal()
     {
-
         if (_health + _healthStep <= _maxHealth)
         {
             _health += _healthStep;
@@ -34,7 +33,6 @@ public class Player : MonoBehaviour
 
             _health += deltaHealth;
         }
-
     }
 
     public void TakeDamage()
