@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 238854720}
   - component: {fileID: 238854719}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: DamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 1.7759564
+  m_AspectRatio: 1.7782028
 --- !u!114 &1084695657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1431251341}
   - component: {fileID: 1431251340}
   m_Layer: 0
-  m_Name: Heal
+  m_Name: HealButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

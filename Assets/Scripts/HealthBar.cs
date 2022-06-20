@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class HealthBarChanger : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
@@ -27,11 +27,16 @@ public class HealthBarChanger : MonoBehaviour
 
     private void Update()
     {
-        _target = _player.Health;
+        _slider.value = Mathf.MoveTowards(_slider.value, _target, _speed * Time.deltaTime);
+    }
 
-        if (_player != null)
-            _slider.value = Mathf.MoveTowards(_slider.value, _target, _speed * Time.deltaTime);
-        else
-            _slider.value = _slider.minValue;
+    public void SetMinValue()
+    {
+        _slider.value = _slider.minValue;
+    }
+
+    public void ChangeTarget()
+    {
+        _target = _player.Health;
     }
 }

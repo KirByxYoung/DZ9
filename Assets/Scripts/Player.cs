@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private UnityEvent Dead;
+    [SerializeField] private UnityEvent ChangedHealth;
+
     private float _maxHealth = 100;
     private float _healthStep = 10;
     private float _health;
@@ -13,12 +17,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _health = _maxHealth;
-    }
-
-    private void Update()
-    {
-        if (_health == 0)
-            Dead();
     }
 
     public void Heal()
@@ -33,6 +31,8 @@ public class Player : MonoBehaviour
 
             _health += deltaHealth;
         }
+
+        ChangedHealth?.Invoke();
     }
 
     public void TakeDamage()
@@ -45,10 +45,16 @@ public class Player : MonoBehaviour
         {
             _health -= _health;
         }
+
+        ChangedHealth?.Invoke();
+
+        if (_health == 0)
+            Die();
     }
 
-    public void Dead()
+    private void Die()
     {
         Destroy(gameObject);
+        Dead?.Invoke();
     }
 }
