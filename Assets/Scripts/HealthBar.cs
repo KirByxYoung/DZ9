@@ -25,11 +25,6 @@ public class HealthBar : MonoBehaviour
         _target = _player.MaxHealth;
     }
 
-    private void Update()
-    {
-        _slider.value = Mathf.MoveTowards(_slider.value, _target, _speed * Time.deltaTime);
-    }
-
     public void SetMinValue()
     {
         _slider.value = _slider.minValue;
@@ -38,5 +33,17 @@ public class HealthBar : MonoBehaviour
     public void ChangeTarget()
     {
         _target = _player.Health;
+
+        StartCoroutine(ChangeValue());
+    }
+
+    private IEnumerator ChangeValue()
+    {
+        while (_slider.value != _target)
+        {
+            _slider.value = Mathf.MoveTowards(_slider.value, _target, _speed * Time.deltaTime);
+
+            yield return null;
+        }
     }
 }
