@@ -1093,6 +1093,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caf348d3827b5c49a0420dcf560c50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 42843407}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: SetMinValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ChangedHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 42843407}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: ChangeTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1431251338
 GameObject:
   m_ObjectHideFlags: 0

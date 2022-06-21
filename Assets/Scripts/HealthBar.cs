@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,11 +22,6 @@ public class HealthBar : MonoBehaviour
         _slider.maxValue = _player.MaxHealth;
         _slider.value = _player.MaxHealth;
         _target = _player.MaxHealth;
-    }
-
-    public void SetMinValue()
-    {
-        _slider.value = _slider.minValue;
     }
 
     public void ChangeTarget()

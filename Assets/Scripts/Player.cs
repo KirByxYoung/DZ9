@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private UnityEvent Dead;
     [SerializeField] private UnityEvent ChangedHealth;
 
     private float _maxHealth = 100;
@@ -41,6 +39,5 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
-        Dead?.Invoke();
     }
 }
